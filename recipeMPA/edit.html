@@ -1,0 +1,80 @@
+<!--
+Name: Yuba Raj Khadka
+Student Id: 18040483
+Username: 18040483
+Course Code: CSE4OAD
+-->
+<!DOCTYPE html >
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<style>
+		table, th , td  {border: 1px solid grey; border-collapse: collapse; padding: 5pt;}
+		table tr:nth-child(odd)	{background-color: #f1f1f1;}
+		table tr:nth-child(even) {background-color: #ffffff;}
+	</style>
+
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src= "edit.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+<h1>Recipe Collection</h1>
+<hr>
+<h2>Edit Recipe</h2>
+
+Enter id of edited recipe: <input type="text" ng-model="id">
+<button type="submit" ng-click=display()> Display </button><br>
+<hr>
+<form ng-submit="edit()">
+	<table >
+		<tr>
+			<td colspan="2">id:{{recipe.id}}
+			</td>
+		</tr>
+		<tr>
+			<td>Name: 
+			</td>
+			<td width="400">
+			<input type="text" ng-model="recipe.name" size=100>
+			</td>
+		
+		</tr>
+		<tr>
+			<td>Serves:
+			</td>
+			<td>
+			<input type="text" ng-model="recipe.serves" size=100>
+			</td>
+		</tr>
+		<tr>
+			<td>Ingredients:
+			</td>
+			<td>
+			<input type="text" ng-model="recipe.ingredients" size=100>
+			</td>
+		</tr>
+		<tr>
+			<td>Remarks:
+			</td>
+			<td>
+			<input type="text" ng-model="recipe.remarks" size=100 >
+			</td>
+		</tr>
+	</table>
+	
+	<br><br>
+	steps:<br><br>
+	<textarea rows="10" cols="50" ng-model="recipe.steps"></textarea><br><br>
+	<button type="submit" > Submit edit </button><br><br>
+
+		<button type="button" onclick="window.location.href='main.html'">
+			Cancel/Return to Main Page</button> <br>
+</form>
+
+</body>
+</html>
+
